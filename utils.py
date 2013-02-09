@@ -1030,9 +1030,10 @@ def init_files(bus):
 	export_filename = "scene"
 	output_filepath = default_dir
 
+	if SettingsOutput.img_dir:
+		output_filepath = bpy.path.abspath(SettingsOutput.img_dir)
+
 	if bpy.data.filepath:
-		if SettingsOutput.img_dir:
-			output_filepath = bpy.path.abspath(SettingsOutput.img_dir)
 
 		if VRayExporter.output == 'USER':
 			if VRayExporter.output_dir:
